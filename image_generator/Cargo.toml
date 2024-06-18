@@ -1,0 +1,10 @@
+[package]
+name = "image_generator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cgmath = "0.18.0"
+chrono = "0.4.38"
+image = "0.25.1"
+rand = "0.8.5"

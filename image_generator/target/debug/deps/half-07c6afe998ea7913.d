@@ -1,0 +1,13 @@
+/workspaces/Rust-Testing-Codespace/image_generator/target/debug/deps/libhalf-07c6afe998ea7913.rmeta: /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/lib.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/bfloat.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/bfloat/convert.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16/arch.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16/arch/x86.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/leading_zeros.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/slice.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/vec.rs
+
+/workspaces/Rust-Testing-Codespace/image_generator/target/debug/deps/half-07c6afe998ea7913.d: /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/lib.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/bfloat.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/bfloat/convert.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16/arch.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16/arch/x86.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/leading_zeros.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/slice.rs /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/vec.rs
+
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/lib.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/bfloat.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/bfloat/convert.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16/arch.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/binary16/arch/x86.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/leading_zeros.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/slice.rs:
+/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.1/src/vec.rs:
