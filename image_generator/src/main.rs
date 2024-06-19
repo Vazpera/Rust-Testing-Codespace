@@ -2,78 +2,7 @@ use cgmath::{prelude::*, Vector3};
 use chrono;
 use image::RgbImage;
 use rand::{self, rngs::StdRng, Rng, SeedableRng};
-const WHITE_SOLID: Material = Material {
-    diffuse_color: Vector3::new(1.0, 1.0, 1.0),
-    specular_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_color: Vector3::new(0.0, 0.0, 0.0),
-    emission_strength: 0.0,
-    specular_chance: 0.1,
-    smoothness: 0.1,
-};
-const RED_SOLID: Material = Material {
-    diffuse_color: Vector3::new(1.0, 0.1, 0.1),
-    specular_color: Vector3::new(1.0, 0.0, 0.0),
-    emission_color: Vector3::new(0.0, 0.0, 0.0),
-    emission_strength: 0.0,
-    specular_chance: 0.1,
-    smoothness: 0.1,
-};
-const GREEN_SOLID: Material = Material {
-    diffuse_color: Vector3::new(0.1, 1.0, 0.1),
-    specular_color: Vector3::new(1.0, 0.0, 0.0),
-    emission_color: Vector3::new(0.0, 0.0, 0.0),
-    emission_strength: 0.0,
-    specular_chance: 0.1,
-    smoothness: 0.1,
-};
-const WHITE_MIRROR: Material = Material {
-    diffuse_color: Vector3::new(1.0, 1.0, 1.0),
-    specular_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_strength: 0.0,
-    specular_chance: 0.1,
-    smoothness: 1.0,
-};
-const RED_MIRROR: Material = Material {
-    diffuse_color: Vector3::new(1.0, 0.0, 0.0),
-    specular_color: Vector3::new(0.9, 0.8, 0.8),
-    emission_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_strength: 0.0,
-    specular_chance: 1.0,
-    smoothness: 1.0,
-};
-const CYAN_MIRROR: Material = Material {
-    diffuse_color: Vector3::new(1.0, 1.0, 1.0),
-    specular_color: Vector3::new(0.8, 0.9, 0.9),
-    emission_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_strength: 0.0,
-    specular_chance: 0.9,
-    smoothness: 1.0,
-};
-const WHITE_LIGHT: Material = Material {
-    diffuse_color: Vector3::new(0.0, 0.0, 0.0),
-    specular_color: Vector3::new(0.0, 0.0, 0.0),
-    emission_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_strength: 1.0,
-    specular_chance: 0.0,
-    smoothness: 0.0,
-};
-const CYAN_LIGHT: Material = Material {
-    diffuse_color: Vector3::new(0.0, 0.0, 0.0),
-    specular_color: Vector3::new(0.0, 0.0, 0.0),
-    emission_color: Vector3::new(0.0, 1.0, 1.0),
-    emission_strength: 1.0,
-    specular_chance: 0.0,
-    smoothness: 0.0,
-};
-const WHITE_GLOW: Material = Material {
-    diffuse_color: Vector3::new(1.0, 1.0, 1.0),
-    specular_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_color: Vector3::new(1.0, 1.0, 1.0),
-    emission_strength: 0.2,
-    specular_chance: 0.1,
-    smoothness: 0.1,
-};
+mod materials;
 
 #[derive(Clone, Copy)]
 struct Material {
@@ -271,103 +200,103 @@ fn main() {
     let sphere_1 = Sphere {
         radius: 4.0,
         position: Vector3::new(-4.0, -6.0, 0.0),
-        material: WHITE_MIRROR,
+        material: materials::WHITE_MIRROR,
     };
     let sphere_2 = Sphere {
         radius: 2.0,
         position: Vector3::new(2.0, -8.0, 0.0),
-        material: WHITE_SOLID,
+        material: materials::WHITE_SOLID,
     };
 
     let sphere_3 = Sphere {
         radius: 1.0,
         position: Vector3::new(4.0, -9.0, 9.0),
-        material: WHITE_LIGHT,
+        material: materials::WHITE_LIGHT,
     };
 
     let floor_1 = Triangle {
         a: Vector3::new(10.0, -10.0, -10.0),
         b: Vector3::new(-10.0, -10.0, 10.0),
         c: Vector3::new(10.0, -10.0, 10.0),
-        material: WHITE_SOLID,
+        material: materials::WHITE_SOLID,
     };
     let floor_2 = Triangle {
         a: Vector3::new(10.0, -10.0, -10.0),
         b: Vector3::new(-10.0, -10.0, -10.0),
         c: Vector3::new(-10.0, -10.0, 10.0),
-        material: WHITE_SOLID,
+        material: materials::WHITE_SOLID,
     };
     let roof_1 = Triangle {
         a: Vector3::new(10.0, 10.0, 10.0),
         b: Vector3::new(-10.0, 10.0, -10.0),
         c: Vector3::new(10.0, 10.0, -10.0),
-        material: WHITE_SOLID,
+        material: materials::WHITE_SOLID,
     };
     let roof_2 = Triangle {
         a: Vector3::new(-10.0, 10.0, -10.0),
         b: Vector3::new(10.0, 10.0, 10.0),
         c: Vector3::new(-10.0, 10.0, 10.0),
-        material: WHITE_SOLID,
+        material: materials::WHITE_SOLID,
     };
     let light_1 = Triangle {
         a: Vector3::new(5.0, 9.9, 5.0),
         b: Vector3::new(-5.0, 9.9, -5.0),
         c: Vector3::new(5.0, 9.9, -5.0),
-        material: WHITE_LIGHT,
+        material: materials::WHITE_LIGHT,
     };
     let light_2 = Triangle {
         a: Vector3::new(-5.0, 9.9, -5.0),
         b: Vector3::new(5.0, 9.9, 5.0),
         c: Vector3::new(-5.0, 9.9, 5.0),
-        material: WHITE_LIGHT,
+        material: materials::WHITE_LIGHT,
     };
     let wall_s_1 = Triangle {
         a: Vector3::new(-10.0, 10.0, -10.0),
         b: Vector3::new(10.0, -10.0, -10.0),
         c: Vector3::new(10.0, 10.0, -10.0),
-        material: WHITE_MIRROR,
+        material: materials::WHITE_MIRROR,
     };
     let wall_s_2 = Triangle {
         a: Vector3::new(-10.0, -10.0, -10.0),
         b: Vector3::new(10.0, -10.0, -10.0),
         c: Vector3::new(-10.0, 10.0, -10.0),
-        material: RED_SOLID,
+        material: materials::RED_SOLID,
     };
     let wall_e_1: Triangle = Triangle {
         a: Vector3::new(10.0, 10.0, -10.0),
         b: Vector3::new(10.0, -10.0, 10.0),
         c: Vector3::new(10.0, 10.0, 10.0),
-        material: RED_SOLID,
+        material: materials::RED_SOLID,
     };
     let wall_e_2: Triangle = Triangle {
         a: Vector3::new(10.0, 10.0, -10.0),
         b: Vector3::new(10.0, -10.0, -10.0),
         c: Vector3::new(10.0, -10.0, 10.0),
-        material: RED_SOLID,
+        material: materials::RED_SOLID,
     };
     let wall_w_1: Triangle = Triangle {
         a: Vector3::new(-10.0, 10.0, -10.0),
         b: Vector3::new(-10.0, -10.0, 10.0),
         c: Vector3::new(-10.0, -10.0, -10.0),
-        material: GREEN_SOLID,
+        material: materials::GREEN_SOLID,
     };
     let wall_w_2: Triangle = Triangle {
         a: Vector3::new(-10.0, 10.0, -10.0),
         b: Vector3::new(-10.0, 10.0, 10.0),
         c: Vector3::new(-10.0, -10.0, 10.0),
-        material: GREEN_SOLID,
+        material: materials::GREEN_SOLID,
     };
     let wall_n_1 = Triangle {
         a: Vector3::new(-10.0, 10.0, 10.0),
         b: Vector3::new(10.0, -10.0, 10.0),
         c: Vector3::new(-10.0, -10.0, 10.0),
-        material: WHITE_SOLID,
+        material: materials::WHITE_SOLID,
     };
     let wall_n_2 = Triangle {
         a: Vector3::new(10.0, 10.0, 10.0),
         b: Vector3::new(10.0, -10.0, 10.0),
         c: Vector3::new(-10.0, 10.0, 10.0),
-        material: WHITE_SOLID,
+        material: materials::WHITE_SOLID,
     };
 
     let objects: Vec<&dyn Intersectable> = vec![
